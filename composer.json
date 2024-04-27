@@ -1,0 +1,12 @@
+{
+    "name": "user/safe",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "User\\Safe\\": "src/"
+        }
+    },
+    "require": {
+        "twbs/bootstrap": "5.3.3"
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #4C0000, #003300, #000000); /* Dark red, Dark green, Black */
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .signup-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            color: black;
+        }
+
+        .signup-container h2 {
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            background-color: rgba(0, 0, 0, 0.05); /* Light gray */
+            color: black;
+            border-color: black;
+        }
+
+        .btn-signup {
+            background-color: #B22222; /* Dark red */
+            color: white;
+            border-color: #B22222; /* Dark red */
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-signup:hover {
+            background-color: #8B0000; /* Darker red on hover */
+            border-color: #8B0000; /* Darker red on hover */
+        }
+
+        .signup-image {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height: 100vh;"> <!-- Centering the container -->
+        <div class="col-md-6">
+            <div class="signup-container">
+                <img src="palestineflag.jpg" alt="Signup Image" class="signup-image" width="80px">
+                <h2 style="color: black;">Sign Up</h2>
+                <form action="signup.php" method="post">
+                    <div class="form-group">
+                        <label for="username" style="color: black;">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="color: black;">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" style="color: black;">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-signup btn-block">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

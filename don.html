@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs associatifs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('flag.JPG');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .club-image {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .club-image img {
+            width: 100%;
+            height: auto;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-5">Charity clubs in your country</h1>
+
+        <!-- Formulaire de don (initialement masqué) -->
+        <div class="donation-form-container">
+            <form id="donation-form">
+                <label for="country">Pays :</label>
+                <select id="country" name="country" required>
+                    <option value="">Sélectionner un pays</option>
+                    <option value="tunisia">Tunisie</option>
+                    <option value="Allemagne">Allemagne</option>
+                    <!-- Ajoutez d'autres options de pays selon vos besoins -->
+                </select><br>
+
+                <!-- Modifiez le bouton pour appeler la fonction avec le pays sélectionné -->
+                <button type="button" onclick="showClubInfo(document.getElementById('country').value)">see more</button>
+            </form>
+        </div>
+
+        <!-- Section pour afficher les informations sur le club associatif -->
+        <div id="club-info">
+            <h2>charity club</h2>
+            <div id="club-details">Aucun club sélectionné.</div>
+            <div class="club-image">
+                <img src="croissant.JPG" alt="Club Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript pour afficher les informations sur le club associatif -->
+    <script>
+        // Fonction pour afficher les informations sur le club associatif
+        function showClubInfo(country) {
+            var clubInfo = document.getElementById('club-info');
+            var clubDetails = document.getElementById('club-details');
+
+            // Afficher les informations sur le club associatif en fonction du pays sélectionné
+            if (country === 'tunisia') {
+                clubDetails.textContent = "The Tunisian Red Crescent (CRT) is a Tunisian humanitarian association founded in 1956, after the country's independence. The CRT is one of the national societies of the International Red Cross and Red Crescent Movement";
+            } else if (country === 'Allemagne') {
+                clubDetails.textContent = "Le Club Associatif Allemagne organise des collectes d'argent, de nourriture et de matériel médical pour soutenir les réfugiés.";
+            }
+            // Ajoutez d'autres conditions pour d'autres pays selon vos besoins
+
+            // Afficher la section des informations sur le club associatif
+            clubInfo.style.display = 'block';
+        }
+
+        // Précharger les informations sur le club associatif lorsque la page est chargée
+        window.onload = function() {
+            var countrySelect = document.getElementById('country');
+            var selectedCountry = countrySelect.value;
+            showClubInfo(selectedCountry);
+        }
+    </script>
+</body>
+</html>
